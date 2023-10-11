@@ -1,0 +1,38 @@
+{
+    "title": "RequirerSchema",
+    "description": "Requirer schema for session_auth.",
+    "type": "object",
+    "properties": {
+      "unit": {
+        "$ref": "#/definitions/BaseModel"
+      },
+      "app": {
+        "$ref": "#/definitions/SessionAuthRequirer"
+      }
+    },
+    "required": [
+      "app"
+    ],
+    "definitions": {
+      "BaseModel": {
+        "title": "BaseModel",
+        "type": "object",
+        "properties": {}
+      },
+      "SessionAuthRequirer": {
+        "title": "SessionAuthRequirer",
+        "type": "object",
+        "properties": {
+            "allowed_return_urls": {
+                "title": "Allowed Return URLs",
+                "description": "Allowed return URLs from Oathkeeper.",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+              }
+        },
+        "required": []
+      }
+    }
+}

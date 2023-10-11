@@ -1,0 +1,43 @@
+{
+    "title": "ProviderSchema",
+    "description": "Provider schema for session_auth.",
+    "type": "object",
+    "properties": {
+      "unit": {
+        "$ref": "#/definitions/BaseModel"
+      },
+      "app": {
+        "$ref": "#/definitions/SessionAuthProvider"
+      }
+    },
+    "required": [
+      "app"
+    ],
+    "definitions": {
+      "BaseModel": {
+        "title": "BaseModel",
+        "type": "object",
+        "properties": {}
+      },
+      "SessionAuthProvider": {
+        "title": "SessionAuthProvider",
+        "type": "object",
+        "properties": {
+            "login_browser_endpoint": {
+                "title": "Login Browser Endpoint",
+                "description": "The Kratos endpoint that initializes a browser-based user login flow.",
+                "type": "string"
+              },
+              "sessions_endpoint": {
+                "title": "Sessions Endpoint",
+                "description": "The Kratos endpoint to check who the current session belongs to.",
+                "type": "string"
+              }
+        },
+        "required": [
+          "login_browser_endpoint",
+          "sessions_endpoint"
+        ]
+      }
+    }
+}
